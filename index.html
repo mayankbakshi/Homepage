@@ -3,320 +3,329 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mayank (MB) — Research</title>
-  <meta name="description" content="Research scientist in machine learning, decentralized learning, information theory, and communications. Overview, selected work, CV, and openings." />
-  <meta name="color-scheme" content="light" />
-  <meta property="og:title" content="Mayank (MB) — Research" />
-  <meta property="og:description" content="Overview, selected work, CV, and openings." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23002454'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='64' fill='%23FAC01A'%3EMP%3C/text%3E%3C/svg%3E" />
-
+  <title>Mayank Bakshi | LIMITS Lab | Northern Arizona University (NAU)</title>
+  <meta name="description" content="Mayank Bakshi — Assistant Professor at Northern Arizona University. Research: information theory, distributed learning, coding, security, optimization." />
   <style>
-    /* ========== NAU-aligned base (colors, type, spacing) ========== */
     :root{
-      --nau-blue: #002454;   /* NAU True Blue */
-      --nau-gold: #FAC01A;   /* NAU Gold */
-      --bg: #ffffff;
-      --text: #101418;
-      --muted:#5a6672;
-      --surface:#f6f7f9;
-      --border:#e2e6ea;
-      --radius:12px;
-      --shadow: 0 1px 2px rgba(0,0,0,.05), 0 10px 20px rgba(0,0,0,.05);
-      --maxw: 1040px;
-      --link: var(--nau-blue);
-      --link-hover: #16386f; /* darker blue for hover */
+      /* NAU-inspired academic palette */
+      --bg:#ffffff;
+      --card:#ffffff;
+      --text:#0b1f3b;      /* NAU blue (deep) */
+      --muted:#4b5f7a;
+      --line:#d7e0ea;
+      --blue:#0b3d91;      /* NAU blue */
+      --gold:#fac01a;      /* NAU gold */
+      --radius:6px;
+      --max:1020px;
     }
-    /* Typography: Univers (licensed) with accessible fallbacks per NAU quick guide */
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font: 16px/1.6 "Univers", "Univers LT Std", "Univers Next", Arial, "Helvetica Neue", Helvetica, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", sans-serif;
-      background:var(--bg); color:var(--text);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
     }
-    img{max-width:100%; height:auto; display:block}
+    a{color:var(--blue); text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
 
-    a{color:var(--link); text-decoration:none}
-    a:hover{color:var(--link-hover); text-decoration:underline}
-    .muted{color:var(--muted)}
-    .chip{background:#eef2f7; border-radius:999px; padding:.25rem .58rem; font-size:.88rem}
-    .btn{
-      display:inline-flex; align-items:center; gap:.5rem;
-      border-radius:10px; padding:.62rem .9rem; font-weight:650;
-      border:2px solid var(--nau-blue); color:#fff; background:var(--nau-blue);
-      box-shadow:var(--shadow);
-    }
-    .btn.secondary{background:#fff; color:var(--nau-blue)}
-    .btn:hover{text-decoration:none; transform:translateY(-1px)}
-
-    /* Header (NAU True Blue bar with Gold underline) */
+    /* Header */
     header{
-      position:sticky; top:0; z-index:1000;
-      background:var(--nau-blue); color:#fff; border-bottom:6px solid var(--nau-gold);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #ffffff;
+      border-bottom: 4px solid var(--gold); /* NAU gold rule */
     }
-    nav{height:66px; display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
-    .brand .mark{
-      width:36px; height:36px; border-radius:6px; background:var(--nau-gold);
-      color:var(--nau-blue); display:grid; place-items:center; font-weight:900
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 18px;
+      gap:14px;
     }
-    .nav-links{display:flex; gap:18px; align-items:center}
-    .nav-links a{color:#fff; padding:6px 8px; border-radius:8px}
-    .nav-links a:hover{background:rgba(255,255,255,.08); text-decoration:none}
-    .nav-cta{display:none}
-    @media (max-width: 780px){ .nav-links{display:none} .nav-cta{display:block} }
+    .brandwrap{display:flex; align-items:center; gap:12px; min-width:0}
+    .logo{height:38px; width:auto}
+    .brand{display:flex; flex-direction:column; gap:2px; min-width:0}
+    .brand strong{font-size:15px; letter-spacing:.2px}
+    .brand span{font-size:12px; color:var(--muted)}
 
-    /* Hero with headshot */
-    .hero{padding:36px 0 22px}
-    .hero-grid{display:grid; grid-template-columns: 1.4fr .9fr; gap:24px; align-items:center}
-    @media (max-width: 920px){ .hero-grid{grid-template-columns:1fr} }
-    h1{margin:.2rem 0 .2rem; font-size: clamp(1.9rem, 3.6vw, 2.6rem)}
-    .meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-
-    .headshot{
-      width:100%; max-width:320px; justify-self:end;
-      border-radius:14px; overflow:hidden; border:4px solid var(--nau-gold);
-      box-shadow:var(--shadow); background:#fff;
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:flex-end;
+      font-size:13px;
     }
-    .headshot img{width:100%; aspect-ratio:4/5; object-fit:cover}
+    .links a{padding:7px 10px; border-radius:6px; border:1px solid transparent; color:var(--blue)}
+    .links a:hover{border-color: rgba(11,61,145,.25); background: rgba(11,61,145,.05); text-decoration:none}
 
-    /* Callout (Recruiting) */
-    .callout{
-      margin:18px 0 4px; padding:14px 16px; border-radius:12px;
-      border:1px solid #e7e9ef; background: #fff7e0; /* subtle gold tint */
-      color:#2d2a1a; display:flex; gap:12px; align-items:flex-start
+    /* Hero + cards */
+    .hero{
+      padding:18px 0 10px;
+      display:grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap:18px;
+      align-items:stretch;
     }
-    .callout strong{display:block}
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr; padding-top:10px}
+    }
 
-    /* Sections */
-    section{padding:28px 0; border-top:1px solid var(--border)}
-    section:first-of-type{border-top:none}
-    h2{font-size:1.2rem; margin:0 0 .8rem}
-    .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
-    .card{border:1px solid var(--border); border-radius:12px; background:#fff; padding:16px}
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:20px;
+    }
 
-    /* Footer */
-    footer{border-top:6px solid var(--nau-gold); padding:22px 0 44px; color:#3e4650; font-size:.95rem}
+    .title{
+      font-size:30px;
+      line-height:1.2;
+      margin:0 0 6px;
+      letter-spacing:-.2px;
+    }
+    .subtitle{color:var(--muted); margin:0 0 14px; font-size:15px}
 
-    /* Mobile sheet */
-    dialog#menu{border:none; padding:0; background:transparent}
-    .sheet{background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:10px 16px}
-    .sheet a{display:block; padding:12px 4px; border-bottom:1px dashed var(--border); color:var(--nau-blue)}
-    .sheet a:last-child{border-bottom:none}
+    .mini{font-size:12px; color: var(--muted)}
+
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .pill{
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:4px;
+      border:1px solid var(--line);
+      color: var(--muted);
+      background: #fbfdff;
+    }
+
+    .cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:6px;
+      border:1px solid var(--line);
+      background:#ffffff;
+      color: var(--text);
+      font-size:13px;
+    }
+    .btn.primary{
+      border-color: rgba(11,61,145,.35);
+      background: rgba(11,61,145,.06);
+      font-weight:600;
+    }
+
+    section{padding:14px 0}
+    h2{font-size:16px; margin:0 0 10px; letter-spacing:.1px}
+    .muted{color:var(--muted)}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width: 860px){.grid2{grid-template-columns:1fr}}
+
+    ul{margin:10px 0 0 18px; padding:0}
+    li{margin:7px 0}
+
+    .k{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(250,192,26,.18);
+      color: var(--text);
+      font-size:12px;
+      margin-right:6px;
+    }
+
+    .footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .anchor{scroll-margin-top:84px}
+    /* Tabs */
+    .tabs{margin-top:10px}
+    .tabcontent{display:none}
+    .tabcontent.active{display:block}
+    .tablink.active{border-color: rgba(11,61,145,.35); background: rgba(11,61,145,.06)}
   </style>
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Mayank (MB)",
-    "jobTitle":"Research Scientist",
-    "affiliation":"[Northern Arizona University / Lab]",
-    "address":{"@type":"PostalAddress","addressLocality":"Flagstaff","addressRegion":"AZ","addressCountry":"US"},
-    "email":"mailto:[you@nau.edu]",
-    "url":"[https://your-domain.example]",
-    "sameAs":[
-      "https://scholar.google.com/citations?user=[id]",
-      "https://github.com/[handle]",
-      "https://www.linkedin.com/in/[handle]"
-    ]
-  }
-  </script>
 </head>
 <body>
-  <a class="skip" href="#content" style="position:absolute;left:-9999px">Skip to content</a>
-
   <header>
-    <div class="container">
-      <nav aria-label="Primary">
+    <div class="nav">
+      <div class="brandwrap">
+        <img class="logo" src="img/NAU.png" alt="Northern Arizona University" />
         <div class="brand">
-          <div class="mark" aria-hidden="true">MB</div>
-          <a href="#" style="color:#fff; text-decoration:none">Mayank (MB)</a>
+          <strong>Mayank Bakshi</strong>
+          <span>Assistant Professor • School of Informatics, Computing, and Cyber Systems • Northern Arizona University</span>
         </div>
-        <div class="nav-links" role="menubar" aria-label="Section links">
-          <a role="menuitem" href="#about">About</a>
-          <a role="menuitem" href="#work">Selected Work</a>
-          <a role="menuitem" href="#teaching">Teaching</a>
-          <a role="menuitem" href="#openings">Openings</a>
-          <a role="menuitem" href="#contact">Contact</a>
-          <a role="menuitem" href="cv/Mayank_CV.pdf" class="chip" target="_blank" rel="noopener" style="color:var(--nau-blue); background:#fff">CV (PDF)</a>
-        </div>
-        <button class="nav-cta btn secondary" aria-label="Open menu" onclick="document.getElementById('menu').showModal()">
-          ☰ Menu
-        </button>
+      </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#" class="tablink active" data-tab="about">About</a>
+        <a href="#" class="tablink" data-tab="research">Research</a>
+        <a href="#" class="tablink" data-tab="openings">Openings</a>
+        <a href="#" class="tablink" data-tab="teaching">Teaching</a>
+        <a href="#" class="tablink" data-tab="contact">Contact</a>
+        <a href="CV/CV_Mayank_Bakshi.pdf" target="_blank" rel="noreferrer">CV</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=YXGjwOkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
       </nav>
     </div>
   </header>
 
-  <main id="content" class="container">
-    <!-- Hero -->
-    <section class="hero" id="about" aria-labelledby="name">
-      <div class="hero-grid">
-        <div>
-          <h1 id="name">Mayank (MB)</h1>
-          <div class="meta">
-            <span class="chip">Research Scientist</span>
-            <span class="muted">[Northern Arizona University / Lab], Arizona, USA</span>
-          </div>
-          <p class="muted">
-            I work at the intersection of <strong>machine learning</strong>, <strong>decentralized / federated learning</strong>,
-            <strong>information theory</strong>, and <strong>communications</strong>. I build algorithms with provable guarantees and practical impact in learning over networks, reliability, and data‑efficient inference.
-          </p>
-          <div class="meta" style="gap:10px; margin-top:10px">
-            <a class="btn" href="cv/Mayank_CV.pdf" target="_blank" rel="noopener" aria-label="Download CV as PDF">⬇︎ Download CV</a>
-            <a class="btn secondary" href="#work">Selected Work</a>
-            <a class="btn secondary" href="#openings">PhD Openings</a>
-          </div>
-
-          <!-- Recruiting callout -->
-          <div class="callout" role="note" aria-label="Recruiting PhD Students">
-            <div aria-hidden="true">📣</div>
-            <div>
-              <strong>Recruiting PhD students for Fall 2026.</strong>
-              Areas: ML, decentralized/federated learning, information theory, and communications. See <a href="#openings">Openings</a> for how to get in touch.
-            </div>
-          </div>
-        </div>
-
-        <!-- Headshot with a safe placeholder -->
-        <figure class="headshot">
-          <!-- Replace src with your file: img/mb.jpg -->
-          <img
-            src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000' viewBox='0 0 800 1000'%3E%3Crect width='800' height='1000' fill='%23e9eef5'/%3E%3Crect x='60' y='80' width='680' height='840' rx='24' ry='24' fill='%23ffffff' stroke='%23002454' stroke-width='6'/%3E%3Ctext x='400' y='520' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='36' fill='%235a6672'%3EAdd your 4:5 headshot%3C/text%3E%3Ctext x='400' y='570' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='24' fill='%235a6672'%3E(img/mb.jpg, ~1600x2000)%3C/text%3E%3C/svg%3E"
-            alt="Headshot placeholder. Replace with your portrait at img/mb.jpg."
-            loading="eager"
-          />
-          <figcaption class="muted" style="padding:8px 10px">Replace placeholder with <code>img/mb.jpg</code></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Research focus -->
-    <section aria-labelledby="areas">
-      <h2 id="areas">Research focus</h2>
-      <div class="grid">
-        <div class="card">
-          <h3 style="margin-top:0">Decentralized & Federated Learning</h3>
-          <p class="muted">Scalable optimization and communication‑efficient training across heterogeneous devices and networks.</p>
-          <div class="meta">
-            <span class="chip">non‑IID clients</span>
-            <span class="chip">robustness</span>
-            <span class="chip">privacy</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Information Theory for ML</h3>
-          <p class="muted">Generalization bounds, coding‑inspired methods, and reliable learning over noisy channels.</p>
-          <div class="meta">
-            <span class="chip">rate–distortion</span>
-            <span class="chip">sources & channels</span>
-            <span class="chip">sample efficiency</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Selected Work -->
-    <section id="work" aria-labelledby="selected-work">
-      <h2 id="selected-work">Selected work</h2>
-      <div class="card" style="margin-bottom:12px">
-        <strong>Communication‑Efficient Decentralized Learning via Adaptive Quantized Gossip</strong><br/>
-        <span class="muted">[Your Name], et al. • <em>ICML</em>, 2024</span><br/>
-        <a href="[preprint-link]" target="_blank" rel="noopener">paper</a> ·
-        <a href="[code-link]" target="_blank" rel="noopener">code</a> ·
-        <a href="[talk-link]" target="_blank" rel="noopener">talk</a>
-      </div>
-      <div class="card" style="margin-bottom:12px">
-        <strong>Rate–Distortion Perspectives on Federated Generalization under Client Shift</strong><br/>
-        <span class="muted">[Your Name], et al. • <em>IEEE T-IT</em>, 2023</span><br/>
-        <a href="[doi-or-arxiv]" target="_blank" rel="noopener">paper</a> ·
-        <a href="[slides]" target="_blank" rel="noopener">slides</a>
-      </div>
+  <main class="wrap">
+    <!-- HERO -->
+    <div class="hero">
       <div class="card">
-        <strong>Reliable Learning over Noisy Channels with Coding‑Inspired Optimizers</strong><br/>
-        <span class="muted">[Your Name], et al. • <em>NeurIPS</em>, 2022</span><br/>
-        <a href="[preprint-link]" target="_blank" rel="noopener">paper</a> ·
-        <a href="[code-link]" target="_blank" rel="noopener">code</a>
-      </div>
-    </section>
-
-    <!-- Teaching -->
-    <section id="teaching" aria-labelledby="teaching-title">
-      <h2 id="teaching-title">Teaching</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Introduction to Machine Learning</strong>
-          <div class="muted">[Institution], [Term/Year]</div>
-          <p class="muted">Supervised learning, regularization, model selection, and fairness.</p>
+        <h1 class="title" style="margin-bottom:10px">LIMITS Lab</h1>
+        <p class="mini" style="margin:6px 0 0">
+          <strong>Limits of Information and Trusted Distributed Systems</strong>
+        </p>
+        <p class="subtitle">
+          Research in information theory, communication, learning, inference, and optimization for distributed systems under communication and adversarial constraints.
+        </p>
+        <p class="subtitle">
+          I develop theory and algorithms for distributed learning and inference under communication constraints,
+          adversarial behavior, and structured models (e.g., sparsity and low rank).
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#openings">PhD opening (Fall 2026)</a>
+          <a class="btn" href="CV/CV_Mayank_Bakshi.pdf" target="_blank" rel="noreferrer">CV (PDF)</a>
+          <a class="btn" href="https://scholar.google.com/citations?hl=en&user=YXGjwOkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          
         </div>
-        <div class="card">
-          <strong>Information Theory & Communications</strong>
-          <div class="muted">[Institution], [Term/Year]</div>
-          <p class="muted">Entropy, mutual information, coding, and applications to modern ML.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Openings -->
-    <section id="openings" aria-labelledby="openings-title">
-      <h2 id="openings-title">Openings (PhD — Fall 2026)</h2>
-      <div class="card">
-        <p>If you are interested in PhD research in ML, decentralized/federated learning, or information theory:</p>
-        <ul>
-          <li>Background in probability, linear algebra, optimization, and Python/Matlab preferred.</li>
-          <li>Email a single PDF containing CV, transcripts, and (if any) a paper or project write‑up.</li>
-          <li>Subject line: <code>PhD Application — Fall 2026 — [Your Name]</code></li>
-        </ul>
-        <p class="muted">Candidates from diverse and non‑traditional backgrounds are encouraged to apply.</p>
-        <p><a class="btn secondary" href="mailto:[you@nau.edu]?subject=PhD%20Application%20%E2%80%94%20Fall%202026%20%E2%80%94%20[Your%20Name]">Contact about PhD</a></p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <div class="grid">
-        <div class="card">
-          <p><strong>Email:</strong> <a href="mailto:[you@nau.edu]">[you@nau.edu]</a></p>
-          <p class="muted">Flagstaff, Arizona</p>
-        </div>
-        <div class="card">
-          <div class="meta" aria-label="Profiles" style="flex-wrap:wrap">
-            <a class="chip" href="https://scholar.google.com/citations?user=[id]" target="_blank" rel="noopener">Google Scholar</a>
-            <a class="chip" href="https://github.com/[handle]" target="_blank" rel="noopener">GitHub</a>
-            <a class="chip" href="https://www.linkedin.com/in/[handle]" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="chip" href="[personal-blog-or-bsky]" target="_blank" rel="noopener">Blog / Social</a>
-          </div>
+        <div class="pillrow" aria-label="Research keywords">
+          <span class="pill">Distributed Learning</span>
+          <span class="pill">Adversarial Robustness</span>
+          <span class="pill">Error Correction</span>
+          <span class="pill">Physical-Layer Security</span>
+          <span class="pill">Sparse / Low-Rank Recovery</span>
+          <span class="pill">Distributed Optimization</span>
         </div>
       </div>
-    </section>
-
-    <footer>
-      <div>© <span id="y"></span> Mayank (MB). All rights reserved.</div>
-      <div class="muted">Last updated: Nov 17, 2025.</div>
-    </footer>
-  </main>
-
-  <!-- Mobile sheet -->
-  <dialog id="menu" aria-label="Mobile menu">
-    <div class="sheet container">
-      <button class="btn secondary" style="float:right" onclick="document.getElementById('menu').close()" aria-label="Close menu">✕ Close</button>
-      <div style="clear:both"></div>
-      <a href="#about" onclick="menu.close()">About</a>
-      <a href="#work" onclick="menu.close()">Selected Work</a>
-      <a href="#teaching" onclick="menu.close()">Teaching</a>
-      <a href="#openings" onclick="menu.close()">Openings</a>
-      <a href="#contact" onclick="menu.close()">Contact</a>
-      <a href="cv/Mayank_CV.pdf" target="_blank" rel="noopener" onclick="menu.close()">CV (PDF)</a>
+      </div>
     </div>
-  </dialog>
+
+    <div class="tabs">
+
+<!-- ABOUT TAB -->
+<div class="tabcontent active" id="about">
+  <div class="card">
+    <h2>About</h2>
+    <ul style="margin-left:18px">
+      <li><strong>Title:</strong> Assistant Professor</li>
+      <li><strong>School:</strong> School of Informatics, Computing, and Cyber Systems</li>
+      <li><strong>University:</strong> Northern Arizona University</li>
+      <li><strong>Office:</strong> SICCS 221, Flagstaff, AZ</li>
+      <li><strong>Research interests:</strong> information theory; distributed systems; learning and inference under communication and adversarial constraints</li>
+      <li><strong>Email:</strong> <a href="mailto:mayank.bakshi@nau.edu">mayank.bakshi@nau.edu</a></li>
+    </ul>
+    <img src="img/bakshi.jpg" alt="Mayank Bakshi" style="width:50%; max-width:200px; margin-top:10px; border:1px solid var(--line); border-radius:4px;" />
+  </div>
+</div>
+
+<!-- RESEARCH TAB -->
+<div class="tabcontent" id="research">
+  <div class="card">
+    <h2>Research</h2>
+    <div class="grid2">
+      <div>
+        <p class="muted" style="margin:0 0 10px">
+          My work studies fundamental limits and practical algorithms for learning, inference, and optimization in networked systems with communication constraints and adversarial uncertainty.
+        </p>
+        <ul>
+          <li><strong>Distributed learning under adversaries:</strong> Byzantine-robust and poisoning-resilient methods; limits and tradeoffs.</li>
+          <li><strong>Adversarial sensing/estimation:</strong> robust detection and hypothesis testing with worst-case channel/state variation.</li>
+          <li><strong>Coding for learning and inference:</strong> error correction ideas for reliability and efficiency in distributed pipelines.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Structured recovery:</strong> sparse recovery and low-rank recovery; structured estimation and inference.</li>
+          <li><strong>Physical-layer security:</strong> adversarial channel models and information-theoretic security.</li>
+          <li><strong>Optimization over networks:</strong> communication-efficient distributed optimization and statistical limits.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPENINGS TAB -->
+<div class="tabcontent" id="openings">
+  <div class="card">
+    <h2>Openings</h2>
+    <p class="muted" style="margin:0 0 10px">
+      <strong>Fully funded PhD position (Fall 2026).</strong> Prospective students with strong preparation in mathematics and an interest in theory-driven research are encouraged to apply.
+    </p>
+    <ul>
+      <li><strong>Background:</strong> EE/CS/Math (or related). Solid preparation in probability, linear algebra, and optimization.</li>
+      <li><strong>What you get:</strong> close mentorship, collaboration opportunities across NAU and with other universities, and support for conference travel.</li>
+      <li><strong>How to apply:</strong> apply via NAU Engineering and email me your CV + a short intro.</li>
+    </ul>
+    <div class="cta">
+      <a class="btn primary" href="https://nau.edu/engineering/" target="_blank" rel="noreferrer">NAU Engineering (apply)</a>
+      <a class="btn" href="mailto:mayank.bakshi@nau.edu">Email CV + intro</a>
+    </div>
+  </div>
+</div>
+
+<!-- TEACHING TAB -->
+<div class="tabcontent" id="teaching">
+  <div class="card">
+    <h2>Teaching</h2>
+    <ul>
+      <li><strong>Fall 2025:</strong> EE 443/543 — Foundations of Intelligent Systems / Pattern Recognition</li>
+      <li><strong>Spring 2026:</strong> EE 448 — Digital Signal Processing</li>
+      <li><strong>Spring 2026:</strong> EE 436/536 — Communication Systems</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CONTACT TAB -->
+<div class="tabcontent" id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p class="muted" style="margin:0 0 12px">Email is the best way to reach me.</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:mayank.bakshi@nau.edu">mayank.bakshi@nau.edu</a></li>
+      <li><strong>CV:</strong> <a href="CV/CV_Mayank_Bakshi.pdf" target="_blank" rel="noreferrer">CV_Mayank_Bakshi.pdf</a></li>
+      <li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?hl=en&user=YXGjwOkAAAAJ" target="_blank" rel="noreferrer">scholar.google.com</a></li>
+      <li><strong>Address:</strong> School of Informatics, Computing, and Cyber Systems, Room 221 (SICCS), Northern Arizona University, Flagstaff, AZ, USA</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Mayank Bakshi</div>
+      <div class="mini">Single-page site • No frameworks • Easy to host on GitHub Pages</div>
+    </div>
+  </main>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    // Tabs behavior
+    document.querySelectorAll('.tablink').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const tab = link.dataset.tab;
+        document.querySelectorAll('.tablink').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('.tabcontent').forEach(c => c.classList.remove('active'));
+        link.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
