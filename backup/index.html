@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mayank Bakshi | LIMITS Lab | Northern Arizona University (NAU)</title>
+  <meta name="description" content="Mayank Bakshi — Assistant Professor at Northern Arizona University. Research: information theory, distributed learning, coding, security, optimization." />
+  <style>
+    :root{
+      /* NAU-inspired academic palette */
+      --bg:#ffffff;
+      --card:#ffffff;
+      --text:#0b1f3b;      /* NAU blue (deep) */
+      --muted:#4b5f7a;
+      --line:#d7e0ea;
+      --blue:#0b3d91;      /* NAU blue */
+      --gold:#fac01a;      /* NAU gold */
+      --radius:6px;
+      --max:1020px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+    }
+    a{color:var(--blue); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #ffffff;
+      border-bottom: 4px solid var(--gold); /* NAU gold rule */
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 18px;
+      gap:14px;
+    }
+    .brandwrap{display:flex; align-items:center; gap:12px; min-width:0}
+    .logo{height:38px; width:auto}
+    .brand{display:flex; flex-direction:column; gap:2px; min-width:0}
+    .brand strong{font-size:15px; letter-spacing:.2px}
+    .brand span{font-size:12px; color:var(--muted)}
+
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:flex-end;
+      font-size:13px;
+    }
+    .links a{padding:7px 10px; border-radius:6px; border:1px solid transparent; color:var(--blue)}
+    .links a:hover{border-color: rgba(11,61,145,.25); background: rgba(11,61,145,.05); text-decoration:none}
+
+    /* Hero + cards */
+    .hero{
+      padding:18px 0 10px;
+      display:grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr; padding-top:10px}
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:20px;
+    }
+
+    .title{
+      font-size:30px;
+      line-height:1.2;
+      margin:0 0 6px;
+      letter-spacing:-.2px;
+    }
+    .subtitle{color:var(--muted); margin:0 0 14px; font-size:15px}
+
+    .mini{font-size:12px; color: var(--muted)}
+
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .pill{
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:4px;
+      border:1px solid var(--line);
+      color: var(--muted);
+      background: #fbfdff;
+    }
+
+    .cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:6px;
+      border:1px solid var(--line);
+      background:#ffffff;
+      color: var(--text);
+      font-size:13px;
+    }
+    .btn.primary{
+      border-color: rgba(11,61,145,.35);
+      background: rgba(11,61,145,.06);
+      font-weight:600;
+    }
+
+    section{padding:14px 0}
+    h2{font-size:16px; margin:0 0 10px; letter-spacing:.1px}
+    .muted{color:var(--muted)}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width: 860px){.grid2{grid-template-columns:1fr}}
+
+    ul{margin:10px 0 0 18px; padding:0}
+    li{margin:7px 0}
+
+    .k{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(250,192,26,.18);
+      color: var(--text);
+      font-size:12px;
+      margin-right:6px;
+    }
+
+    .footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .anchor{scroll-margin-top:84px}
+    /* Tabs */
+    .tabs{margin-top:10px}
+    .tabcontent{display:none}
+    .tabcontent.active{display:block}
+    .tablink.active{border-color: rgba(11,61,145,.35); background: rgba(11,61,145,.06)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brandwrap">
+        <img class="logo" src="img/NAU.png" alt="Northern Arizona University" />
+        <div class="brand">
+          <strong>Mayank Bakshi</strong>
+          <span>Assistant Professor • School of Informatics, Computing, and Cyber Systems • Northern Arizona University</span>
+        </div>
+      </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#" class="tablink active" data-tab="about">About</a>
+        <a href="#" class="tablink" data-tab="research">Research</a>
+        <a href="#" class="tablink" data-tab="openings">Openings</a>
+        <a href="#" class="tablink" data-tab="teaching">Teaching</a>
+        <a href="#" class="tablink" data-tab="contact">Contact</a>
+        <a href="CV/CV_Mayank_Bakshi.pdf" target="_blank" rel="noreferrer">CV</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=YXGjwOkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card">
+        <h1 class="title" style="margin-bottom:10px">LIMITS Lab</h1>
+        <p class="mini" style="margin:6px 0 0">
+          <strong>Limits of Information and Trusted Distributed Systems</strong>
+        </p>
+        <p class="subtitle">
+          Research in information theory, communication, learning, inference, and optimization for distributed systems under communication and adversarial constraints.
+        </p>
+        <p class="subtitle">
+          We develop theory and algorithms for distributed learning and inference under communication constraints,
+          adversarial behavior, and structured models (e.g., sparsity and low rank).
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#openings">PhD opening (Fall 2026)</a>
+          
+          
+          
+        </div>
+        <div class="pillrow" aria-label="Research keywords">
+          <span class="pill">Distributed Learning</span>
+          <span class="pill">Adversarial Robustness</span>
+          <span class="pill">Error Correction</span>
+          <span class="pill">Physical-Layer Security</span>
+          <span class="pill">Sparse / Low-Rank Recovery</span>
+          <span class="pill">Distributed Optimization</span>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+
+<!-- ABOUT TAB -->
+<div class="tabcontent active" id="about">
+  <div class="card">
+    <h2>About</h2>
+    <ul style="margin-left:18px">
+      <li><strong>PI:</strong> Prof. Mayank Bakshi</li>
+      <li><strong>Office:</strong> SICCS 221, Flagstaff, AZ</li>
+      <li><strong>Research interests:</strong> information theory; distributed systems; learning and inference under communication and adversarial constraints</li>
+      <li><strong>Email:</strong> <a href="mailto:mayank.bakshi@nau.edu">mayank.bakshi@nau.edu</a></li>
+    </ul>
+    <img src="img/bakshi.jpg" alt="Mayank Bakshi" style="width:50%; max-width:200px; margin-top:10px; border:1px solid var(--line); border-radius:4px;" />
+  </div>
+</div>
+
+<!-- RESEARCH TAB -->
+<div class="tabcontent" id="research">
+  <div class="card">
+    <h2>Research</h2>
+    <div class="grid2">
+      <div>
+        <p class="muted" style="margin:0 0 10px">
+          My work studies fundamental limits and practical algorithms for learning, inference, and optimization in networked systems with communication constraints and adversarial uncertainty.
+        </p>
+        <ul>
+          <li><strong>Distributed learning under adversaries:</strong> Byzantine-robust and poisoning-resilient methods; limits and tradeoffs.</li>
+          <li><strong>Adversarial sensing/estimation:</strong> robust detection and hypothesis testing with worst-case channel/state variation.</li>
+          <li><strong>Coding for learning and inference:</strong> error correction ideas for reliability and efficiency in distributed pipelines.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Structured recovery:</strong> sparse recovery and low-rank recovery; structured estimation and inference.</li>
+          <li><strong>Physical-layer security:</strong> adversarial channel models and information-theoretic security.</li>
+          <li><strong>Optimization over networks:</strong> communication-efficient distributed optimization and statistical limits.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPENINGS TAB -->
+<div class="tabcontent" id="openings">
+  <div class="card">
+    <h2>Openings</h2>
+    <p class="muted" style="margin:0 0 10px">
+      <strong>Fully funded PhD position (Fall 2026).</strong> Prospective students with strong preparation in mathematics and an interest in theory-driven research are encouraged to apply.
+    </p>
+    <ul>
+      <li><strong>Background:</strong> EE/CS/Math (or related). Solid preparation in probability, linear algebra, and optimization.</li>
+      <li><strong>What you get:</strong> close mentorship, collaboration opportunities across NAU and with other universities, and support for conference travel.</li>
+      <li><strong>How to apply:</strong> apply via NAU Engineering and email me your CV + a short intro.</li>
+    </ul>
+    <div class="cta">
+      <a class="btn primary" href="https://nau.edu/engineering/" target="_blank" rel="noreferrer">NAU Engineering (apply)</a>
+      <a class="btn" href="mailto:mayank.bakshi@nau.edu">Email CV + intro</a>
+    </div>
+  </div>
+</div>
+
+<!-- TEACHING TAB -->
+<div class="tabcontent" id="teaching">
+  <div class="card">
+    <h2>Teaching</h2>
+    <ul>
+      <li><strong>Fall 2025:</strong> EE 443/543 — Foundations of Intelligent Systems / Pattern Recognition</li>
+      <li><strong>Spring 2026:</strong> EE 448 — Digital Signal Processing</li>
+      <li><strong>Spring 2026:</strong> EE 436/536 — Communication Systems</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CONTACT TAB -->
+<div class="tabcontent" id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p class="muted" style="margin:0 0 12px">Email is the best way to reach me.</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:mayank.bakshi@nau.edu">mayank.bakshi@nau.edu</a></li>
+      <li><strong>CV:</strong> <a href="CV/CV_Mayank_Bakshi.pdf" target="_blank" rel="noreferrer">CV_Mayank_Bakshi.pdf</a></li>
+      <li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?hl=en&user=YXGjwOkAAAAJ" target="_blank" rel="noreferrer">scholar.google.com</a></li>
+      <li><strong>Address:</strong> School of Informatics, Computing, and Cyber Systems, Room 221 (SICCS), Northern Arizona University, Flagstaff, AZ, USA</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Mayank Bakshi</div>
+      <div class="mini">LIMITS Lab • NAU</div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Tabs behavior
+    document.querySelectorAll('.tablink').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const tab = link.dataset.tab;
+        document.querySelectorAll('.tablink').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('.tabcontent').forEach(c => c.classList.remove('active'));
+        link.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
